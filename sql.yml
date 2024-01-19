@@ -1,0 +1,21 @@
+resources:
+  - name: cloud-sql-instance
+    type: sqladmin.v1beta4.instance
+    properties:
+      region: asia-south1
+      settings:
+        tier: db-n1-standard-1
+        backupConfiguration:
+          startTime: '02:00'
+          enabled: false
+          binaryLogEnabled: false
+        locationPreference:
+          zone: asia-south1-a
+      users:
+        - name: user-1
+          host: 10.1.1.1
+        - name: user-2
+          host: 10.1.1.2
+      databases:
+        - name: db-1
+        - name: db-2
